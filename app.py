@@ -224,20 +224,13 @@ with col_result:
                 for item in top_k
             )
             st.markdown(f'<div class="neighbors">{chips}</div>', unsafe_allow_html=True)
-            st.markdown(
-                '<div class="legend"><span class="k0">Hijau</span> = kelas 0 (rendah), '
-                '<span class="k1">merah</span> = kelas 1 (tinggi). Urutan dari yang paling dekat.</div>',
-                unsafe_allow_html=True,
-            )
-
+           
             nearest_df = pd.DataFrame(top_k)
             nearest_df["Kelas"] = nearest_df["Kelas"].map({0: "0 - Rendah", 1: "1 - Tinggi"})
             nearest_df["Jarak Euclidean"] = nearest_df["Jarak Euclidean"].map(lambda x: f"{x:.4f}")
             st.dataframe(nearest_df, use_container_width=True, hide_index=True)
 
             st.write(f"**Hasil voting:** kelas 0 (rendah) = {count_0} suara, kelas 1 (tinggi) = {count_1} suara.")
-
-        st.caption("Aplikasi ini dibuat untuk demonstrasi akademik dan bukan diagnosis medis.")
 
 # ------------------------------------------------------------------
 # Data latih & penjelasan
