@@ -249,21 +249,6 @@ with st.container(border=True):
     display_df["Kelas"] = display_df["Kelas"].map({0: "0 - Rendah", 1: "1 - Tinggi"})
     st.dataframe(display_df, use_container_width=True, hide_index=True)
 
-with st.expander("Cara kerja algoritma KNN"):
-    st.markdown("""
-    1. Sistem menerima lima atribut pasien baru.
-    2. Sistem menghitung jarak Euclidean dari pasien baru ke setiap data latih.
-    3. Data diurutkan dari jarak terkecil ke terbesar.
-    4. Sistem mengambil K tetangga terdekat.
-    5. Kelas dengan suara terbanyak menjadi hasil prediksi.
-
-    **Rumus jarak Euclidean:**
-
-    `d = sqrt((usia1-usia2)^2 + (BMI1-BMI2)^2 + (glukosa1-glukosa2)^2 + (tekanan1-tekanan2)^2 + (riwayat1-riwayat2)^2)`
-
-    Pada versi ini jarak dihitung pada skala atribut asli, seperti contoh screenshot.
-    """)
-
 st.markdown(
     '<p class="note">SPK Prediksi Risiko Diabetes. Dibuat dengan Python dan Streamlit, '
     'dengan 10 pasien contoh sebagai data latih.</p>',
