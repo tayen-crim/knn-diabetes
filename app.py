@@ -248,9 +248,3 @@ with st.container(border=True):
     display_df = df.copy()
     display_df["Kelas"] = display_df["Kelas"].map({0: "0 - Rendah", 1: "1 - Tinggi"})
     st.dataframe(display_df, use_container_width=True, hide_index=True)
-
-st.markdown(
-    '<p class="note">SPK Prediksi Risiko Diabetes. Dibuat dengan Python dan Streamlit, '
-    'dengan 10 pasien contoh sebagai data latih.</p>',
-    unsafe_allow_html=True,
-)
